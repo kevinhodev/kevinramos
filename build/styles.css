@@ -66,7 +66,6 @@ a {
 }
 .header .navbar .menu {
   display: flex;
-  gap: 32px;
   list-style-type: none;
   font-family: "Poppins", sans-serif;
   transform: translateX(32px);
@@ -74,6 +73,17 @@ a {
 .header .navbar .menu li {
   position: relative;
   padding: 16px 32px;
+  margin: 0 8px;
+}
+@media (max-width: 1024px) {
+  .header .navbar .menu li {
+    padding: 12px 24px;
+  }
+}
+@media (max-width: 900px) {
+  .header .navbar .menu li {
+    display: none;
+  }
 }
 .header .navbar .menu li::after {
   content: "";
@@ -99,7 +109,7 @@ a {
   color: #636464;
 }
 .header .navbar .contact-me {
-  margin-right: 24px;
+  margin-right: 64px;
 }
 .header .navbar .contact-me button {
   font-family: "Poppins", sans-serif;
@@ -142,7 +152,7 @@ a {
 .header .hero .intro-section .line {
   display: inline-block;
   background-color: #4f6beb;
-  height: 4px;
+  height: 3px;
   width: 100px;
   border-radius: 100px;
   transform: translateY(-5px);
@@ -150,10 +160,45 @@ a {
 .header .hero .intro-section p {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
+  width: 50%;
 }
 .header .hero .intro-section .role {
   margin: 0;
   display: inline-block;
+}
+.header .hero .intro-section .my-work-button {
+  width: 70%;
+  margin-top: 8px;
+}
+.header .hero .intro-section .my-work-button button {
+  font-family: "Poppins", sans-serif;
+  background-color: rgb(23, 121, 212);
+  color: #fff;
+  border: 1px #aaa solid;
+  border-radius: 10px;
+  padding: 8px 16px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: border-radius 350ms ease-in;
+}
+.header .hero .intro-section .my-work-button button:hover {
+  border-radius: 0;
+}
+.header .hero .intro-section .launch-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 164px;
+  cursor: pointer;
+}
+.header .hero .intro-section .launch-section .rocket-image {
+  width: 125px;
+  height: 125px;
+}
+.header .hero .intro-section .launch-section p {
+  border-bottom: 2px solid rgba(17, 33, 179, 0.3);
+  padding-bottom: 12px;
+  width: 18%;
 }
 .header .hero .images-section {
   position: relative;
