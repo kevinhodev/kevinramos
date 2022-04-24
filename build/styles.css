@@ -37,10 +37,10 @@ body {
   display: flex;
   flex-direction: column;
   height: 90vh;
-  width: 100%;
-  margin: 32px 64px;
+  width: 80%;
+  margin: 32px auto;
   background-color: #fff;
-  border-radius: 16px;
+  border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 .header .navbar {
@@ -293,6 +293,15 @@ body {
   border-radius: 50%;
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   fill: #4f6beb;
+}
+.header .hero .images-section .skills-intro .frontend .node-image,
+.header .hero .images-section .skills-intro .backend .node-image,
+.header .hero .images-section .skills-intro .designer .node-image {
+  width: 65px;
+  height: 65px;
+}
+.header .hero .images-section .skills-intro .backend {
+  transform: translateY(-16px);
 }
 @keyframes float {
   0% {
