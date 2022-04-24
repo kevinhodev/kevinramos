@@ -1,8 +1,8 @@
 .header {
   display: flex;
   flex-direction: column;
-  min-width: 92.5vw;
   height: 90vh;
+  width: 100%;
   margin: 32px 64px;
   background-color: #fff;
   border-radius: 16px;
@@ -126,31 +126,33 @@
 
       .name {
         font-family: "Ubuntu", sans-serif;
-        font-size: 3.2rem;
+        font-size: 3.5rem;
         margin-top: 64px;
+        margin-bottom: 8px;
 
         .highlight {
           color: #4f6beb;
         }
 
         @media screen and (min-width: 1680px) {
-          font-size: 3.5rem;
+          font-size: 3.2rem;
         }
       }
 
       .line {
         display: inline-block;
         background-color: #4f6beb;
-        height: 3px;
+        height: 2px;
         width: 100px;
+        margin-top: 8px;
         border-radius: 100px;
         transform: translateY(-5px);
       }
 
       p {
         font-family: "Poppins", sans-serif;
-        font-size: 1.2rem;
-        width: 75%;
+        font-size: 1.1rem;
+        width: 50%;
       }
 
       .role {
@@ -203,17 +205,18 @@
     .images-section {
       position: relative;
 
+      img {
+        margin-top: -8px;
+      }
+
       .stars-image {
         position: relative;
-
-        @media screen and (max-width: 2000px) {
-          width: 700px;
-          height: 600px;
-        }
+        width: 800px;
+        height: 500px;
 
         @media screen and (max-width: 1680px) {
-          width: 800px;
-          height: 500px;
+          width: 600px;
+          height: 600px;
         }
 
         @media screen and (max-width: 1480px) {
@@ -229,10 +232,12 @@
         z-index: 1;
         transform: rotateZ(-30deg);
         animation: float 6s ease-in-out infinite;
+        width: 300px;
+        height: 300px;
 
         @media screen and (max-width: 2000px) {
           width: 500px;
-          height: 500px;
+          height: 300px;
         }
 
         @media screen and (max-width: 1680px) {
@@ -243,6 +248,37 @@
         @media screen and (max-width: 1480px) {
           width: 300px;
           height: 300px;
+        }
+      }
+
+      .skills-intro {
+        position: absolute;
+        bottom: 16px;
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+
+        .frontend,
+        .backend,
+        .designer {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          span {
+            margin-top: 8px;
+            font-family: "Poppins", sans-serif;
+          }
+
+          svg {
+            width: 50px;
+            height: 50px;
+            padding: 8px;
+            border-radius: 50%;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            fill: #4f6beb;
+          }
         }
       }
 

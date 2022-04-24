@@ -30,26 +30,14 @@ body {
 .container {
   display: flex;
   flex-direction: row;
-  min-height: 100vh;
   background-color: #242525;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  min-width: 92.5vw;
-  height: 90vh;
-  margin: 32px 64px;
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  min-width: 92.5vw;
   height: 90vh;
+  width: 100%;
   margin: 32px 64px;
   background-color: #fff;
   border-radius: 16px;
@@ -159,29 +147,31 @@ section {
 }
 .header .hero .intro-section .name {
   font-family: "Ubuntu", sans-serif;
-  font-size: 3.2rem;
+  font-size: 3.5rem;
   margin-top: 64px;
+  margin-bottom: 8px;
 }
 .header .hero .intro-section .name .highlight {
   color: #4f6beb;
 }
 @media screen and (min-width: 1680px) {
   .header .hero .intro-section .name {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
   }
 }
 .header .hero .intro-section .line {
   display: inline-block;
   background-color: #4f6beb;
-  height: 3px;
+  height: 2px;
   width: 100px;
+  margin-top: 8px;
   border-radius: 100px;
   transform: translateY(-5px);
 }
 .header .hero .intro-section p {
   font-family: "Poppins", sans-serif;
-  font-size: 1.2rem;
-  width: 75%;
+  font-size: 1.1rem;
+  width: 50%;
 }
 .header .hero .intro-section .role {
   margin: 0;
@@ -225,19 +215,18 @@ section {
 .header .hero .images-section {
   position: relative;
 }
+.header .hero .images-section img {
+  margin-top: -8px;
+}
 .header .hero .images-section .stars-image {
   position: relative;
-}
-@media screen and (max-width: 2000px) {
-  .header .hero .images-section .stars-image {
-    width: 700px;
-    height: 600px;
-  }
+  width: 800px;
+  height: 500px;
 }
 @media screen and (max-width: 1680px) {
   .header .hero .images-section .stars-image {
-    width: 800px;
-    height: 500px;
+    width: 600px;
+    height: 600px;
   }
 }
 @media screen and (max-width: 1480px) {
@@ -253,11 +242,13 @@ section {
   z-index: 1;
   transform: rotateZ(-30deg);
   animation: float 6s ease-in-out infinite;
+  width: 300px;
+  height: 300px;
 }
 @media screen and (max-width: 2000px) {
   .header .hero .images-section .astronaut-image {
     width: 500px;
-    height: 500px;
+    height: 300px;
   }
 }
 @media screen and (max-width: 1680px) {
@@ -271,6 +262,37 @@ section {
     width: 300px;
     height: 300px;
   }
+}
+.header .hero .images-section .skills-intro {
+  position: absolute;
+  bottom: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.header .hero .images-section .skills-intro .frontend,
+.header .hero .images-section .skills-intro .backend,
+.header .hero .images-section .skills-intro .designer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .hero .images-section .skills-intro .frontend span,
+.header .hero .images-section .skills-intro .backend span,
+.header .hero .images-section .skills-intro .designer span {
+  margin-top: 8px;
+  font-family: "Poppins", sans-serif;
+}
+.header .hero .images-section .skills-intro .frontend svg,
+.header .hero .images-section .skills-intro .backend svg,
+.header .hero .images-section .skills-intro .designer svg {
+  width: 50px;
+  height: 50px;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  fill: #4f6beb;
 }
 @keyframes float {
   0% {
