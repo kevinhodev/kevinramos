@@ -71,7 +71,6 @@ body {
   display: flex;
   list-style-type: none;
   font-family: "Poppins", sans-serif;
-  transform: translateX(32px);
 }
 .header .navbar .menu li {
   position: relative;
