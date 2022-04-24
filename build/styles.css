@@ -23,19 +23,34 @@ a {
   text-decoration: none;
 }
 
+body {
+  background-color: #242525;
+}
+
 .container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   min-height: 100vh;
   background-color: #242525;
-  backdrop-filter: blur(16px);
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  min-width: 92.5vw;
+  height: 90vh;
+  margin: 32px 64px;
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .header {
   display: flex;
   flex-direction: column;
-  min-height: 100vh;
-  margin: 64px 42px;
+  min-width: 92.5vw;
+  height: 90vh;
+  margin: 32px 64px;
   background-color: #fff;
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -128,7 +143,8 @@ a {
 .header .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 48px 64px 0 64px;
+  flex: 1;
+  padding: 24px 64px 24px 64px;
 }
 @media screen and (max-width: 1024px) {
   .header .hero {
@@ -136,16 +152,21 @@ a {
     grid-template-columns: 1fr;
   }
 }
-.header .hero .intro-section .principal-roles {
+.header .hero .intro-section {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+.header .hero .intro-section .name {
   font-family: "Ubuntu", sans-serif;
   font-size: 3.2rem;
   margin-top: 64px;
 }
-.header .hero .intro-section .principal-roles .highlight {
+.header .hero .intro-section .name .highlight {
   color: #4f6beb;
 }
 @media screen and (min-width: 1680px) {
-  .header .hero .intro-section .principal-roles {
+  .header .hero .intro-section .name {
     font-size: 3.5rem;
   }
 }
@@ -160,7 +181,7 @@ a {
 .header .hero .intro-section p {
   font-family: "Poppins", sans-serif;
   font-size: 1.2rem;
-  width: 50%;
+  width: 75%;
 }
 .header .hero .intro-section .role {
   margin: 0;
@@ -185,10 +206,11 @@ a {
   border-radius: 0;
 }
 .header .hero .intro-section .launch-section {
+  position: absolute;
+  bottom: 0;
   display: flex;
   align-items: center;
   gap: 16px;
-  margin-top: 164px;
   cursor: pointer;
 }
 .header .hero .intro-section .launch-section .rocket-image {
@@ -198,7 +220,7 @@ a {
 .header .hero .intro-section .launch-section p {
   border-bottom: 2px solid rgba(17, 33, 179, 0.3);
   padding-bottom: 12px;
-  width: 18%;
+  width: 35%;
 }
 .header .hero .images-section {
   position: relative;
