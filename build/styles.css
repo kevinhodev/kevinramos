@@ -31,6 +31,13 @@ body {
   display: flex;
   flex-direction: row;
   background-color: #242525;
+  height: 100vh;
+}
+@media (max-width: 680px) {
+  .container {
+    flex-direction: column;
+    justify-content: center;
+  }
 }
 
 .header {
@@ -43,20 +50,42 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 680px) {
+  .header {
+    width: 95%;
+    margin: 16px auto;
+  }
+}
 .header .navbar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding-top: 32px;
 }
+@media (max-width: 680px) {
+  .header .navbar {
+    padding-top: 8px;
+    justify-content: space-between;
+  }
+}
 .header .navbar .logo {
   margin-left: 64px;
   position: relative;
+}
+@media (max-width: 680px) {
+  .header .navbar .logo {
+    margin-left: 16px;
+  }
 }
 .header .navbar .logo h1 {
   margin: 0;
   font-size: 2.5rem;
   font-weight: 400;
+}
+@media (max-width: 680px) {
+  .header .navbar .logo h1 {
+    font-size: 2.2rem;
+  }
 }
 .header .navbar .logo .dot {
   position: absolute;
@@ -67,10 +96,23 @@ body {
   border-radius: 50%;
   background-color: #4f6beb;
 }
+@media (max-width: 680px) {
+  .header .navbar .logo .dot {
+    width: 6px;
+    height: 6px;
+  }
+}
 .header .navbar .menu {
   display: flex;
   list-style-type: none;
   font-family: "Poppins", sans-serif;
+}
+@media (max-width: 680px) {
+  .header .navbar .menu {
+    position: absolute;
+    inset: 0;
+    transform: translateY(-200%);
+  }
 }
 .header .navbar .menu li {
   position: relative;
@@ -110,8 +152,20 @@ body {
   font-size: 0.9rem;
   color: #636464;
 }
+.header .navbar .arrow {
+  border: solid #636464;
+  border-width: 0 6px 6px 0;
+  display: inline-block;
+  padding: 6px;
+  transform: rotate(45deg) translateX(8px) translateY(-8px);
+}
 .header .navbar .contact-me {
   margin-right: 64px;
+}
+@media (max-width: 680px) {
+  .header .navbar .contact-me {
+    margin-right: 16px;
+  }
 }
 .header .navbar .contact-me button {
   font-family: "Poppins", sans-serif;
@@ -123,6 +177,12 @@ body {
   cursor: pointer;
   transition: background-color 0.2s linear;
 }
+@media (max-width: 680px) {
+  .header .navbar .contact-me button {
+    padding: 4px 8px;
+    font-size: 0.95rem;
+  }
+}
 .header .navbar .contact-me button:hover {
   color: #fff;
   background-color: rgb(23, 121, 212);
@@ -130,13 +190,13 @@ body {
 .header .hero {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  flex: 1;
   padding: 24px 64px 24px 64px;
 }
-@media screen and (max-width: 1024px) {
+@media (max-width: 696px) {
   .header .hero {
-    justify-items: center;
     grid-template-columns: 1fr;
+    padding: 16px;
+    height: 95%;
   }
 }
 .header .hero .intro-section {
@@ -149,6 +209,12 @@ body {
   font-size: 3.5rem;
   margin-top: 64px;
   margin-bottom: 8px;
+}
+@media (max-width: 696px) {
+  .header .hero .intro-section .name {
+    font-size: 2rem;
+    margin-top: 48px;
+  }
 }
 .header .hero .intro-section .name .highlight {
   color: #4f6beb;
@@ -167,10 +233,28 @@ body {
   border-radius: 100px;
   transform: translateY(-5px);
 }
+@media (max-width: 696px) {
+  .header .hero .intro-section .line {
+    height: 1.5px;
+    transform: translateY(-4px);
+  }
+}
+@media (max-width: 696px) {
+  .header .hero .intro-section .role {
+    display: inline-block;
+    width: 50%;
+  }
+}
 .header .hero .intro-section p {
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   width: 50%;
+}
+@media (max-width: 696px) {
+  .header .hero .intro-section p {
+    font-size: 0.8rem;
+    width: 100%;
+  }
 }
 .header .hero .intro-section .role {
   margin: 0;
@@ -191,6 +275,12 @@ body {
   cursor: pointer;
   transition: border-radius 350ms ease-in;
 }
+@media (max-width: 696px) {
+  .header .hero .intro-section .my-work-button button {
+    padding: 4px 8px;
+    font-size: 0.9rem;
+  }
+}
 .header .hero .intro-section .my-work-button button:hover {
   border-radius: 0;
 }
@@ -202,17 +292,40 @@ body {
   gap: 16px;
   cursor: pointer;
 }
+@media (max-width: 696px) {
+  .header .hero .intro-section .launch-section {
+    left: 15%;
+  }
+}
 .header .hero .intro-section .launch-section .rocket-image {
   width: 125px;
   height: 125px;
+}
+@media (max-width: 696px) {
+  .header .hero .intro-section .launch-section .rocket-image {
+    width: 90px;
+    height: 90px;
+  }
 }
 .header .hero .intro-section .launch-section p {
   border-bottom: 2px solid rgba(17, 33, 179, 0.3);
   padding-bottom: 12px;
   width: 35%;
 }
+@media (max-width: 696px) {
+  .header .hero .intro-section .launch-section p {
+    padding-bottom: 6px;
+    width: 100%;
+  }
+}
 .header .hero .images-section {
   position: relative;
+}
+@media (max-width: 696px) {
+  .header .hero .images-section {
+    display: flex;
+    justify-content: center;
+  }
 }
 .header .hero .images-section img {
   margin-top: -8px;
@@ -222,16 +335,10 @@ body {
   width: 800px;
   height: 500px;
 }
-@media screen and (max-width: 1680px) {
+@media (max-width: 696px) {
   .header .hero .images-section .stars-image {
-    width: 600px;
-    height: 600px;
-  }
-}
-@media screen and (max-width: 1480px) {
-  .header .hero .images-section .stars-image {
-    width: 700px;
-    height: 400px;
+    width: 300px;
+    height: 300px;
   }
 }
 .header .hero .images-section .astronaut-image {
@@ -244,22 +351,10 @@ body {
   width: 300px;
   height: 300px;
 }
-@media screen and (max-width: 2000px) {
+@media (max-width: 696px) {
   .header .hero .images-section .astronaut-image {
-    width: 500px;
-    height: 300px;
-  }
-}
-@media screen and (max-width: 1680px) {
-  .header .hero .images-section .astronaut-image {
-    width: 400px;
-    height: 400px;
-  }
-}
-@media screen and (max-width: 1480px) {
-  .header .hero .images-section .astronaut-image {
-    width: 300px;
-    height: 300px;
+    width: 200px;
+    height: 200px;
   }
 }
 .header .hero .images-section .skills-intro {
@@ -269,6 +364,11 @@ body {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+}
+@media (max-width: 696px) {
+  .header .hero .images-section .skills-intro {
+    bottom: -8px;
+  }
 }
 .header .hero .images-section .skills-intro .frontend,
 .header .hero .images-section .skills-intro .backend,
@@ -283,6 +383,13 @@ body {
   margin-top: 8px;
   font-family: "Poppins", sans-serif;
 }
+@media (max-width: 696px) {
+  .header .hero .images-section .skills-intro .frontend span,
+.header .hero .images-section .skills-intro .backend span,
+.header .hero .images-section .skills-intro .designer span {
+    font-size: 0.85rem;
+  }
+}
 .header .hero .images-section .skills-intro .frontend svg,
 .header .hero .images-section .skills-intro .backend svg,
 .header .hero .images-section .skills-intro .designer svg {
@@ -293,24 +400,40 @@ body {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
   fill: #4f6beb;
 }
+@media (max-width: 696px) {
+  .header .hero .images-section .skills-intro .frontend svg,
+.header .hero .images-section .skills-intro .backend svg,
+.header .hero .images-section .skills-intro .designer svg {
+    width: 35px;
+    height: 35px;
+  }
+}
 .header .hero .images-section .skills-intro .frontend .node-image,
 .header .hero .images-section .skills-intro .backend .node-image,
 .header .hero .images-section .skills-intro .designer .node-image {
   width: 65px;
   height: 65px;
 }
+@media (max-width: 696px) {
+  .header .hero .images-section .skills-intro .frontend .node-image,
+.header .hero .images-section .skills-intro .backend .node-image,
+.header .hero .images-section .skills-intro .designer .node-image {
+    width: 50px;
+    height: 50px;
+  }
+}
 .header .hero .images-section .skills-intro .backend {
   transform: translateY(-16px);
 }
 @keyframes float {
   0% {
-    transform: translatey(0px) rotateZ(-30deg);
+    transform: translateY(0px) rotateZ(-30deg);
   }
   50% {
-    transform: translatey(-20px) rotateZ(-30deg);
+    transform: translateY(-20px) rotateZ(-30deg);
   }
   100% {
-    transform: translatey(0px) rotateZ(-30deg);
+    transform: translateY(0px) rotateZ(-30deg);
   }
 }
 
