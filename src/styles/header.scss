@@ -9,9 +9,14 @@
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
+  @media (max-width: 1024px) {
+    width: 90%;
+    padding: 1rem 2rem;
+  }
+
   @media (max-width: 680px) {
     width: 95%;
-    margin: 16px auto;
+    margin: 1rem auto;
   }
 
   .navbar {
@@ -112,12 +117,6 @@
     }
 
     .contact-me {
-      margin-right: 64px;
-
-      @media (max-width: 680px) {
-        margin-right: 16px;
-      }
-
       button {
         font-family: "Poppins", sans-serif;
         background-color: transparent;
