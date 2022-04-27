@@ -43,6 +43,7 @@ body {
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr 100px;
   height: 95vh;
   width: 80%;
   margin: 1.5rem auto;
@@ -53,6 +54,8 @@ body {
 }
 @media (max-width: 1024px) {
   .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 1fr 100px;
     width: 90%;
     padding: 1rem 2rem;
   }
@@ -65,14 +68,14 @@ body {
 }
 .header .navbar {
   grid-column: span 2;
+  align-self: start;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
   .header .navbar {
-    padding-top: 8px;
-    justify-content: space-between;
+    align-self: center;
   }
 }
 .header .navbar .logo {
@@ -175,11 +178,10 @@ body {
 }
 .header .hero {
   display: flex;
-  height: 100%;
 }
-@media (max-width: 696px) {
+@media (max-width: 1024px) {
   .header .hero {
-    padding: 16px;
+    justify-self: center;
   }
 }
 .header .hero .intro-section {
@@ -327,6 +329,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+@media (max-width: 1024px) {
+  .header .images-section {
+    grid-row: 3/4;
+  }
 }
 .header .images-section .stars-image {
   position: relative;

@@ -1,6 +1,7 @@
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 100px 1fr 100px;
   height: 95vh;
   width: 80%;
   margin: 1.5rem auto;
@@ -10,6 +11,8 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 
   @media (max-width: 1024px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 100px 1fr 1fr 100px;
     width: 90%;
     padding: 1rem 2rem;
   }
@@ -21,13 +24,13 @@
 
   .navbar {
     grid-column: span 2;
+    align-self: start;
     display: flex;
     align-items: center;
     justify-content: space-between;
 
-    @media (max-width: 680px) {
-      padding-top: 8px;
-      justify-content: space-between;
+    @media (max-width: 1024px) {
+      align-self: center;
     }
 
     .logo {
@@ -142,10 +145,9 @@
 
   .hero {
     display: flex;
-    height: 100%;
 
-    @media (max-width: 696px) {
-      padding: 16px;
+    @media (max-width: 1024px) {
+      justify-self: center;
     }
 
     .intro-section {
@@ -288,6 +290,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+
+    @media (max-width: 1024px) {
+      grid-row: 3 / 4;
+    }
 
     .stars-image {
       position: relative;
