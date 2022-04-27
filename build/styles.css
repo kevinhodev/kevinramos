@@ -41,11 +41,12 @@ body {
 }
 
 .header {
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 95vh;
   width: 80%;
-  margin: 32px auto;
+  margin: 1.5rem auto;
+  padding: 1.5rem 4rem;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -57,10 +58,10 @@ body {
   }
 }
 .header .navbar {
+  grid-column: span 2;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: 32px;
 }
 @media (max-width: 680px) {
   .header .navbar {
@@ -69,13 +70,7 @@ body {
   }
 }
 .header .navbar .logo {
-  margin-left: 64px;
   position: relative;
-}
-@media (max-width: 680px) {
-  .header .navbar .logo {
-    margin-left: 16px;
-  }
 }
 .header .navbar .logo h1 {
   margin: 0;
@@ -107,7 +102,7 @@ body {
   list-style-type: none;
   font-family: "Poppins", sans-serif;
 }
-@media (max-width: 680px) {
+@media (max-width: 1024px) {
   .header .navbar .menu {
     position: absolute;
     inset: 0;
@@ -152,13 +147,6 @@ body {
   font-size: 0.9rem;
   color: #636464;
 }
-.header .navbar .arrow {
-  border: solid #636464;
-  border-width: 0 6px 6px 0;
-  display: inline-block;
-  padding: 6px;
-  transform: rotate(45deg) translateX(8px) translateY(-8px);
-}
 .header .navbar .contact-me {
   margin-right: 64px;
 }
@@ -188,15 +176,12 @@ body {
   background-color: rgb(23, 121, 212);
 }
 .header .hero {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  padding: 24px 64px 24px 64px;
+  display: flex;
+  height: 100%;
 }
 @media (max-width: 696px) {
   .header .hero {
-    grid-template-columns: 1fr;
     padding: 16px;
-    height: 95%;
   }
 }
 .header .hero .intro-section {
@@ -210,19 +195,31 @@ body {
   margin-top: 64px;
   margin-bottom: 8px;
 }
+@media (max-width: 1280px) {
+  .header .hero .intro-section .name {
+    font-size: 3rem;
+    margin-top: 32px;
+  }
+}
+@media (max-width: 900px) {
+  .header .hero .intro-section .name {
+    font-size: 2.5rem;
+    margin-top: 48px;
+  }
+}
 @media (max-width: 696px) {
   .header .hero .intro-section .name {
+    font-size: 1.8rem;
+    margin-top: 12px;
+  }
+}
+@media (max-width: 696px) and (min-height: 800px) {
+  .header .hero .intro-section .name {
     font-size: 2rem;
-    margin-top: 48px;
   }
 }
 .header .hero .intro-section .name .highlight {
   color: #4f6beb;
-}
-@media screen and (min-width: 1680px) {
-  .header .hero .intro-section .name {
-    font-size: 3.2rem;
-  }
 }
 .header .hero .intro-section .line {
   display: inline-block;
@@ -239,10 +236,27 @@ body {
     transform: translateY(-4px);
   }
 }
+.header .hero .intro-section .role {
+  display: inline-block;
+}
+@media (max-width: 1280px) {
+  .header .hero .intro-section .role {
+    font-size: 0.9rem;
+  }
+}
+@media (max-width: 900px) {
+  .header .hero .intro-section .role {
+    width: 50%;
+  }
+}
 @media (max-width: 696px) {
   .header .hero .intro-section .role {
-    display: inline-block;
-    width: 50%;
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 696px) and (min-height: 800px) {
+  .header .hero .intro-section .role {
+    font-size: 0.9rem;
   }
 }
 .header .hero .intro-section p {
@@ -250,10 +264,24 @@ body {
   font-size: 1.1rem;
   width: 50%;
 }
+@media (max-width: 1280px) {
+  .header .hero .intro-section p {
+    font-size: 1rem;
+  }
+}
+@media (max-width: 900px) {
+  .header .hero .intro-section p {
+    font-size: 0.95rem;
+  }
+}
 @media (max-width: 696px) {
   .header .hero .intro-section p {
-    font-size: 0.8rem;
     width: 100%;
+  }
+}
+@media (max-width: 696px) and (min-height: 800px) {
+  .header .hero .intro-section p {
+    font-size: 1rem;
   }
 }
 .header .hero .intro-section .role {
@@ -275,155 +303,47 @@ body {
   cursor: pointer;
   transition: border-radius 350ms ease-in;
 }
-@media (max-width: 696px) {
+@media (max-width: 1280px) {
+  .header .hero .intro-section .my-work-button button {
+    padding: 8px 8px;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 800px) {
   .header .hero .intro-section .my-work-button button {
     padding: 4px 8px;
     font-size: 0.9rem;
   }
 }
+@media (max-width: 696px) and (min-height: 800px) {
+  .header .hero .intro-section .my-work-button button {
+    padding: 8px 8px;
+    font-size: 0.95rem;
+  }
+}
 .header .hero .intro-section .my-work-button button:hover {
   border-radius: 0;
 }
-.header .hero .intro-section .launch-section {
-  position: absolute;
-  bottom: 0;
+.header .images-section {
+  position: relative;
   display: flex;
   align-items: center;
-  gap: 16px;
-  cursor: pointer;
+  justify-content: center;
 }
-@media (max-width: 696px) {
-  .header .hero .intro-section .launch-section {
-    left: 15%;
-  }
-}
-.header .hero .intro-section .launch-section .rocket-image {
-  width: 125px;
-  height: 125px;
-}
-@media (max-width: 696px) {
-  .header .hero .intro-section .launch-section .rocket-image {
-    width: 90px;
-    height: 90px;
-  }
-}
-.header .hero .intro-section .launch-section p {
-  border-bottom: 2px solid rgba(17, 33, 179, 0.3);
-  padding-bottom: 12px;
-  width: 35%;
-}
-@media (max-width: 696px) {
-  .header .hero .intro-section .launch-section p {
-    padding-bottom: 6px;
-    width: 100%;
-  }
-}
-.header .hero .images-section {
+.header .images-section .stars-image {
   position: relative;
+  top: -5%;
+  width: 100%;
+  height: 100%;
 }
-@media (max-width: 696px) {
-  .header .hero .images-section {
-    display: flex;
-    justify-content: center;
-  }
-}
-.header .hero .images-section img {
-  margin-top: -8px;
-}
-.header .hero .images-section .stars-image {
-  position: relative;
-  width: 800px;
-  height: 500px;
-}
-@media (max-width: 696px) {
-  .header .hero .images-section .stars-image {
-    width: 300px;
-    height: 300px;
-  }
-}
-.header .hero .images-section .astronaut-image {
+.header .images-section .astronaut-image {
   position: absolute;
-  top: 0;
   left: 25%;
-  z-index: 1;
+  top: 15%;
+  width: 50%;
+  height: 50%;
   transform: rotateZ(-30deg);
   animation: float 6s ease-in-out infinite;
-  width: 300px;
-  height: 300px;
-}
-@media (max-width: 696px) {
-  .header .hero .images-section .astronaut-image {
-    width: 200px;
-    height: 200px;
-  }
-}
-.header .hero .images-section .skills-intro {
-  position: absolute;
-  bottom: 16px;
-  width: 100%;
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-}
-@media (max-width: 696px) {
-  .header .hero .images-section .skills-intro {
-    bottom: -8px;
-  }
-}
-.header .hero .images-section .skills-intro .frontend,
-.header .hero .images-section .skills-intro .backend,
-.header .hero .images-section .skills-intro .designer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.header .hero .images-section .skills-intro .frontend span,
-.header .hero .images-section .skills-intro .backend span,
-.header .hero .images-section .skills-intro .designer span {
-  margin-top: 8px;
-  font-family: "Poppins", sans-serif;
-}
-@media (max-width: 696px) {
-  .header .hero .images-section .skills-intro .frontend span,
-.header .hero .images-section .skills-intro .backend span,
-.header .hero .images-section .skills-intro .designer span {
-    font-size: 0.85rem;
-  }
-}
-.header .hero .images-section .skills-intro .frontend svg,
-.header .hero .images-section .skills-intro .backend svg,
-.header .hero .images-section .skills-intro .designer svg {
-  width: 50px;
-  height: 50px;
-  padding: 8px;
-  border-radius: 50%;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-  fill: #4f6beb;
-}
-@media (max-width: 696px) {
-  .header .hero .images-section .skills-intro .frontend svg,
-.header .hero .images-section .skills-intro .backend svg,
-.header .hero .images-section .skills-intro .designer svg {
-    width: 35px;
-    height: 35px;
-  }
-}
-.header .hero .images-section .skills-intro .frontend .node-image,
-.header .hero .images-section .skills-intro .backend .node-image,
-.header .hero .images-section .skills-intro .designer .node-image {
-  width: 65px;
-  height: 65px;
-}
-@media (max-width: 696px) {
-  .header .hero .images-section .skills-intro .frontend .node-image,
-.header .hero .images-section .skills-intro .backend .node-image,
-.header .hero .images-section .skills-intro .designer .node-image {
-    width: 50px;
-    height: 50px;
-  }
-}
-.header .hero .images-section .skills-intro .backend {
-  transform: translateY(-16px);
 }
 @keyframes float {
   0% {
@@ -435,6 +355,81 @@ body {
   100% {
     transform: translateY(0px) rotateZ(-30deg);
   }
+}
+.header .footer {
+  position: relative;
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+}
+.header .footer .launch-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex: 1 1 auto;
+  cursor: pointer;
+}
+.header .footer .launch-section .rocket-image {
+  height: 80px;
+}
+.header .footer .launch-section p {
+  font-family: "Poppins", sans-serif;
+  border-bottom: 2px solid rgba(17, 33, 179, 0.3);
+  padding-bottom: 12px;
+}
+.header .footer .skills-intro {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex: 2 1 auto;
+  margin-right: -5%;
+}
+.header .footer .skills-intro .frontend,
+.header .footer .skills-intro .backend,
+.header .footer .skills-intro .designer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.header .footer .skills-intro .frontend span,
+.header .footer .skills-intro .backend span,
+.header .footer .skills-intro .designer span {
+  font-size: 1rem;
+  margin-top: 0.75rem;
+  font-family: "Poppins", sans-serif;
+}
+@media (max-width: 696px) {
+  .header .footer .skills-intro .frontend span,
+.header .footer .skills-intro .backend span,
+.header .footer .skills-intro .designer span {
+    font-size: 0.85rem;
+  }
+}
+@media (max-width: 696px) and (min-height: 800px) {
+  .header .footer .skills-intro .frontend span,
+.header .footer .skills-intro .backend span,
+.header .footer .skills-intro .designer span {
+    font-size: 0.9rem;
+  }
+}
+.header .footer .skills-intro .frontend svg,
+.header .footer .skills-intro .backend svg,
+.header .footer .skills-intro .designer svg {
+  width: 45px;
+  height: 45px;
+  padding: 8px;
+  border-radius: 50%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  fill: #4f6beb;
+}
+.header .footer .skills-intro .frontend .node-image,
+.header .footer .skills-intro .backend .node-image,
+.header .footer .skills-intro .designer .node-image {
+  width: 55px;
+  height: 55px;
+}
+.header .footer .skills-intro .backend {
+  transform: translateY(-16px);
 }
 
 /*# sourceMappingURL=styles.css.map */

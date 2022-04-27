@@ -1,9 +1,10 @@
 .header {
-  display: flex;
-  flex-direction: column;
-  height: 90vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 95vh;
   width: 80%;
-  margin: 32px auto;
+  margin: 1.5rem auto;
+  padding: 1.5rem 4rem;
   background-color: #fff;
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
@@ -14,10 +15,10 @@
   }
 
   .navbar {
+    grid-column: span 2;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding-top: 32px;
 
     @media (max-width: 680px) {
       padding-top: 8px;
@@ -25,12 +26,7 @@
     }
 
     .logo {
-      margin-left: 64px;
       position: relative;
-
-      @media (max-width: 680px) {
-        margin-left: 16px;
-      }
 
       h1 {
         margin: 0;
@@ -63,7 +59,7 @@
       list-style-type: none;
       font-family: "Poppins", sans-serif;
 
-      @media (max-width: 680px) {
+      @media (max-width: 1024px) {
         position: absolute;
         inset: 0;
         transform: translateY(-200%);
@@ -115,14 +111,6 @@
       }
     }
 
-    .arrow {
-      border: solid #636464;
-      border-width: 0 6px 6px 0;
-      display: inline-block;
-      padding: 6px;
-      transform: rotate(45deg) translateX(8px) translateY(-8px);
-    }
-
     .contact-me {
       margin-right: 64px;
 
@@ -154,14 +142,11 @@
   }
 
   .hero {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 24px 64px 24px 64px;
+    display: flex;
+    height: 100%;
 
     @media (max-width: 696px) {
-      grid-template-columns: 1fr;
       padding: 16px;
-      height: 95%;
     }
 
     .intro-section {
@@ -175,17 +160,27 @@
         margin-top: 64px;
         margin-bottom: 8px;
 
-        @media (max-width: 696px) {
-          font-size: 2rem;
+        @media (max-width: 1280px) {
+          font-size: 3rem;
+          margin-top: 32px;
+        }
+
+        @media (max-width: 900px) {
+          font-size: 2.5rem;
           margin-top: 48px;
+        }
+
+        @media (max-width: 696px) {
+          font-size: 1.8rem;
+          margin-top: 12px;
+        }
+
+        @media (max-width: 696px) and (min-height: 800px) {
+          font-size: 2rem;
         }
 
         .highlight {
           color: #4f6beb;
-        }
-
-        @media screen and (min-width: 1680px) {
-          font-size: 3.2rem;
         }
       }
 
@@ -205,9 +200,22 @@
       }
 
       .role {
-        @media (max-width: 696px) {
-          display: inline-block;
+        display: inline-block;
+
+        @media (max-width: 1280px) {
+          font-size: 0.9rem;
+        }
+
+        @media (max-width: 900px) {
           width: 50%;
+        }
+
+        @media (max-width: 696px) {
+          font-size: 0.85rem;
+        }
+
+        @media (max-width: 696px) and (min-height: 800px) {
+          font-size: 0.9rem;
         }
       }
 
@@ -216,9 +224,20 @@
         font-size: 1.1rem;
         width: 50%;
 
+        @media (max-width: 1280px) {
+          font-size: 1rem;
+        }
+
+        @media (max-width: 900px) {
+          font-size: 0.95rem;
+        }
+
         @media (max-width: 696px) {
-          font-size: 0.8rem;
           width: 100%;
+        }
+
+        @media (max-width: 696px) and (min-height: 800px) {
+          font-size: 1rem;
         }
       }
 
@@ -242,9 +261,19 @@
           cursor: pointer;
           transition: border-radius 350ms ease-in;
 
-          @media (max-width: 696px) {
+          @media (max-width: 1280px) {
+            padding: 8px 8px;
+            font-size: 0.95rem;
+          }
+
+          @media (max-width: 800px) {
             padding: 4px 8px;
             font-size: 0.9rem;
+          }
+
+          @media (max-width: 696px) and (min-height: 800px) {
+            padding: 8px 8px;
+            font-size: 0.95rem;
           }
 
           &:hover {
@@ -252,149 +281,114 @@
           }
         }
       }
+    }
+  }
 
-      .launch-section {
-        position: absolute;
-        bottom: 0;
-        display: flex;
-        align-items: center;
-        gap: 16px;
-        cursor: pointer;
+  .images-section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        @media (max-width: 696px) {
-          left: 15%;
-        }
+    .stars-image {
+      position: relative;
+      top: -5%;
+      width: 100%;
+      height: 100%;
+    }
 
-        .rocket-image {
-          width: 125px;
-          height: 125px;
+    .astronaut-image {
+      position: absolute;
+      left: 25%;
+      top: 15%;
+      width: 50%;
+      height: 50%;
+      transform: rotateZ(-30deg);
+      animation: float 6s ease-in-out infinite;
+    }
 
-          @media (max-width: 696px) {
-            width: 90px;
-            height: 90px;
-          }
-        }
+    @keyframes float {
+      0% {
+        transform: translateY(0px) rotateZ(-30deg);
+      }
+      50% {
+        transform: translateY(-20px) rotateZ(-30deg);
+      }
+      100% {
+        transform: translateY(0px) rotateZ(-30deg);
+      }
+    }
+  }
 
-        p {
-          border-bottom: 2px solid rgba(17, 33, 179, 0.3);
-          padding-bottom: 12px;
-          width: 35%;
+  .footer {
+    position: relative;
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
 
-          @media (max-width: 696px) {
-            padding-bottom: 6px;
-            width: 100%;
-          }
-        }
+    .launch-section {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex: 1 1 auto;
+      cursor: pointer;
+
+      .rocket-image {
+        height: 80px;
+      }
+
+      p {
+        font-family: "Poppins", sans-serif;
+        border-bottom: 2px solid rgba(17, 33, 179, 0.3);
+        padding-bottom: 12px;
       }
     }
 
-    .images-section {
-      position: relative;
+    .skills-intro {
+      display: flex;
+      justify-content: space-evenly;
+      align-items: center;
+      flex: 2 1 auto;
+      margin-right: -5%;
 
-      @media (max-width: 696px) {
+      .frontend,
+      .backend,
+      .designer {
         display: flex;
-        justify-content: center;
-      }
-
-      img {
-        margin-top: -8px;
-      }
-
-      .stars-image {
-        position: relative;
-        width: 800px;
-        height: 500px;
-
-        @media (max-width: 696px) {
-          width: 300px;
-          height: 300px;
-        }
-      }
-
-      .astronaut-image {
-        position: absolute;
-        top: 0;
-        left: 25%;
-        z-index: 1;
-        transform: rotateZ(-30deg);
-        animation: float 6s ease-in-out infinite;
-        width: 300px;
-        height: 300px;
-
-        @media (max-width: 696px) {
-          width: 200px;
-          height: 200px;
-        }
-      }
-
-      .skills-intro {
-        position: absolute;
-        bottom: 16px;
-        width: 100%;
-        display: flex;
-        justify-content: space-evenly;
+        flex-direction: column;
         align-items: center;
 
-        @media (max-width: 696px) {
-          bottom: -8px;
-        }
+        span {
+          font-size: 1rem;
+          margin-top: 0.75rem;
+          font-family: "Poppins", sans-serif;
 
-        .frontend,
-        .backend,
-        .designer {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-
-          span {
-            margin-top: 8px;
-            font-family: "Poppins", sans-serif;
-
-            @media (max-width: 696px) {
-              font-size: 0.85rem;
-            }
+          @media (max-width: 696px) {
+            font-size: 0.85rem;
           }
 
-          svg {
-            width: 50px;
-            height: 50px;
-            padding: 8px;
-            border-radius: 50%;
-            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-            fill: #4f6beb;
-
-            @media (max-width: 696px) {
-              width: 35px;
-              height: 35px;
-            }
-          }
-
-          .node-image {
-            width: 65px;
-            height: 65px;
-
-            @media (max-width: 696px) {
-              width: 50px;
-              height: 50px;
-            }
+          @media (max-width: 696px) and (min-height: 800px) {
+            font-size: 0.9rem;
           }
         }
 
-        .backend {
-          transform: translateY(-16px);
+        svg {
+          width: 45px;
+          height: 45px;
+          padding: 8px;
+          border-radius: 50%;
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+          fill: #4f6beb;
+        }
+
+        .node-image {
+          width: 55px;
+          height: 55px;
         }
       }
 
-      @keyframes float {
-        0% {
-          transform: translateY(0px) rotateZ(-30deg);
-        }
-        50% {
-          transform: translateY(-20px) rotateZ(-30deg);
-        }
-        100% {
-          transform: translateY(0px) rotateZ(-30deg);
-        }
+      .backend {
+        transform: translateY(-16px);
       }
     }
   }
