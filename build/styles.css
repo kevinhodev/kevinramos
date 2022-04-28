@@ -45,7 +45,7 @@ body {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: 100px 1fr 100px;
   height: 95vh;
-  width: 80%;
+  width: 85%;
   margin: 1.5rem auto;
   padding: 1.5rem 4rem;
   background-color: #fff;
@@ -55,15 +55,18 @@ body {
 @media (max-width: 1024px) {
   .header {
     grid-template-columns: 1fr;
-    grid-template-rows: 100px 1fr 1fr 100px;
+    grid-template-rows: 50px 1fr 2fr 100px;
     width: 90%;
     padding: 1rem 2rem;
   }
 }
-@media (max-width: 680px) {
+@media (max-width: 696px) {
   .header {
+    grid-template-columns: 1fr;
+    grid-template-rows: 50px 1fr 2fr 100px;
     width: 95%;
     margin: 1rem auto;
+    padding: 1rem;
   }
 }
 .header .navbar {
@@ -179,11 +182,6 @@ body {
 .header .hero {
   display: flex;
 }
-@media (max-width: 1024px) {
-  .header .hero {
-    justify-self: center;
-  }
-}
 .header .hero .intro-section {
   position: relative;
   display: flex;
@@ -195,26 +193,14 @@ body {
   margin-top: 64px;
   margin-bottom: 8px;
 }
-@media (max-width: 1280px) {
-  .header .hero .intro-section .name {
-    font-size: 3rem;
-    margin-top: 32px;
-  }
-}
-@media (max-width: 900px) {
+@media (max-width: 1024px) {
   .header .hero .intro-section .name {
     font-size: 2.5rem;
-    margin-top: 48px;
   }
 }
 @media (max-width: 696px) {
   .header .hero .intro-section .name {
-    font-size: 1.8rem;
-    margin-top: 12px;
-  }
-}
-@media (max-width: 696px) and (min-height: 800px) {
-  .header .hero .intro-section .name {
+    margin-top: 32px;
     font-size: 2rem;
   }
 }
@@ -237,51 +223,23 @@ body {
   }
 }
 .header .hero .intro-section .role {
+  width: 50%;
   display: inline-block;
-}
-@media (max-width: 1280px) {
-  .header .hero .intro-section .role {
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 900px) {
-  .header .hero .intro-section .role {
-    width: 50%;
-  }
-}
-@media (max-width: 696px) {
-  .header .hero .intro-section .role {
-    font-size: 0.85rem;
-  }
-}
-@media (max-width: 696px) and (min-height: 800px) {
-  .header .hero .intro-section .role {
-    font-size: 0.9rem;
-  }
 }
 .header .hero .intro-section p {
   font-family: "Poppins", sans-serif;
   font-size: 1.1rem;
   width: 50%;
 }
-@media (max-width: 1280px) {
+@media (max-width: 1024px) {
   .header .hero .intro-section p {
     font-size: 1rem;
-  }
-}
-@media (max-width: 900px) {
-  .header .hero .intro-section p {
-    font-size: 0.95rem;
+    width: 100%;
   }
 }
 @media (max-width: 696px) {
   .header .hero .intro-section p {
-    width: 100%;
-  }
-}
-@media (max-width: 696px) and (min-height: 800px) {
-  .header .hero .intro-section p {
-    font-size: 1rem;
+    font-size: 0.9rem;
   }
 }
 .header .hero .intro-section .role {
@@ -303,22 +261,9 @@ body {
   cursor: pointer;
   transition: border-radius 350ms ease-in;
 }
-@media (max-width: 1280px) {
+@media (max-width: 696px) {
   .header .hero .intro-section .my-work-button button {
-    padding: 8px 8px;
-    font-size: 0.95rem;
-  }
-}
-@media (max-width: 800px) {
-  .header .hero .intro-section .my-work-button button {
-    padding: 4px 8px;
-    font-size: 0.9rem;
-  }
-}
-@media (max-width: 696px) and (min-height: 800px) {
-  .header .hero .intro-section .my-work-button button {
-    padding: 8px 8px;
-    font-size: 0.95rem;
+    font-size: 0.8rem;
   }
 }
 .header .hero .intro-section .my-work-button button:hover {
@@ -340,6 +285,12 @@ body {
   top: -5%;
   width: 100%;
   height: 100%;
+}
+@media (max-width: 1024px) {
+  .header .images-section .stars-image {
+    width: 80%;
+    height: 80%;
+  }
 }
 .header .images-section .astronaut-image {
   position: absolute;
@@ -367,6 +318,14 @@ body {
   display: flex;
   justify-content: space-between;
 }
+@media (max-width: 696px) {
+  .header .footer {
+    flex-direction: column;
+    justify-content: space-around;
+    gap: 24px;
+    transform: translateY(-16px);
+  }
+}
 .header .footer .launch-section {
   display: flex;
   align-items: center;
@@ -374,13 +333,35 @@ body {
   flex: 1 1 auto;
   cursor: pointer;
 }
+@media (max-width: 696px) {
+  .header .footer .launch-section {
+    transform: translateX(-8px);
+    justify-content: center;
+  }
+}
 .header .footer .launch-section .rocket-image {
   height: 80px;
+}
+@media (max-width: 1024px) {
+  .header .footer .launch-section .rocket-image {
+    height: 40px;
+  }
 }
 .header .footer .launch-section p {
   font-family: "Poppins", sans-serif;
   border-bottom: 2px solid rgba(17, 33, 179, 0.3);
   padding-bottom: 12px;
+}
+@media (max-width: 1024px) {
+  .header .footer .launch-section p {
+    font-size: 0.9rem;
+    padding-bottom: 8px;
+  }
+}
+@media (max-width: 696px) {
+  .header .footer .launch-section p {
+    font-size: 0.75rem;
+  }
 }
 .header .footer .skills-intro {
   display: flex;
@@ -388,6 +369,12 @@ body {
   align-items: center;
   flex: 2 1 auto;
   margin-right: -5%;
+}
+@media (max-width: 696px) {
+  .header .footer .skills-intro {
+    justify-content: center;
+    gap: 10%;
+  }
 }
 .header .footer .skills-intro .frontend,
 .header .footer .skills-intro .backend,
@@ -403,11 +390,18 @@ body {
   margin-top: 0.75rem;
   font-family: "Poppins", sans-serif;
 }
+@media (max-width: 1024px) {
+  .header .footer .skills-intro .frontend span,
+.header .footer .skills-intro .backend span,
+.header .footer .skills-intro .designer span {
+    font-size: 0.9rem;
+  }
+}
 @media (max-width: 696px) {
   .header .footer .skills-intro .frontend span,
 .header .footer .skills-intro .backend span,
 .header .footer .skills-intro .designer span {
-    font-size: 0.85rem;
+    font-size: 0.8rem;
   }
 }
 @media (max-width: 696px) and (min-height: 800px) {
@@ -427,11 +421,27 @@ body {
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   fill: #4f6beb;
 }
+@media (max-width: 1024px) {
+  .header .footer .skills-intro .frontend svg,
+.header .footer .skills-intro .backend svg,
+.header .footer .skills-intro .designer svg {
+    width: 30px;
+    height: 30px;
+  }
+}
 .header .footer .skills-intro .frontend .node-image,
 .header .footer .skills-intro .backend .node-image,
 .header .footer .skills-intro .designer .node-image {
   width: 55px;
   height: 55px;
+}
+@media (max-width: 1024px) {
+  .header .footer .skills-intro .frontend .node-image,
+.header .footer .skills-intro .backend .node-image,
+.header .footer .skills-intro .designer .node-image {
+    width: 40px;
+    height: 40px;
+  }
 }
 .header .footer .skills-intro .backend {
   transform: translateY(-16px);
