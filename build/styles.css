@@ -55,7 +55,7 @@ body {
 @media (max-width: 1024px) {
   .header {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr 2fr 100px;
+    grid-template-rows: 50px 20% 1fr 100px;
     width: 90%;
     padding: 1rem 2rem;
   }
