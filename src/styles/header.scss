@@ -219,6 +219,7 @@
         margin-top: 8px;
 
         button {
+          position: relative;
           font-family: "Poppins", sans-serif;
           background-color: rgb(23, 121, 212);
           color: #fff;
@@ -227,6 +228,7 @@
           padding: 8px 16px;
           font-size: 1rem;
           cursor: pointer;
+          z-index: 100;
           transition: border-radius 350ms ease-in;
 
           @media (max-width: 696px) {
