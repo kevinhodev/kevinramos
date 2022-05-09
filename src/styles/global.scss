@@ -26,6 +26,17 @@ body {
   border-radius: 12px;
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
+
+  @media (max-width: 1024px) {
+    width: 90%;
+    padding: 1rem 2rem;
+  }
+
+  @media (max-width: 696px) {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
 }
 
 .btn {

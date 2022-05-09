@@ -49,6 +49,19 @@ body {
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   transition: all 0.5s;
 }
+@media (max-width: 1024px) {
+  .item {
+    width: 90%;
+    padding: 1rem 2rem;
+  }
+}
+@media (max-width: 696px) {
+  .item {
+    width: 95%;
+    margin: 1rem auto;
+    padding: 1rem;
+  }
+}
 
 .btn {
   position: absolute;
@@ -87,17 +100,12 @@ body {
   .header {
     grid-template-columns: 1fr;
     grid-template-rows: 50px 20% 1fr 100px;
-    width: 90%;
-    padding: 1rem 2rem;
   }
 }
 @media (max-width: 696px) {
   .header {
     grid-template-columns: 1fr;
     grid-template-rows: 50px 1fr 2fr 100px;
-    width: 95%;
-    margin: 1rem auto;
-    padding: 1rem;
   }
 }
 .header .navbar {

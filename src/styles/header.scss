@@ -6,16 +6,11 @@
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
     grid-template-rows: 50px 20% 1fr 100px;
-    width: 90%;
-    padding: 1rem 2rem;
   }
 
   @media (max-width: 696px) {
     grid-template-columns: 1fr;
     grid-template-rows: 50px 1fr 2fr 100px;
-    width: 95%;
-    margin: 1rem auto;
-    padding: 1rem;
   }
 
   .navbar {
