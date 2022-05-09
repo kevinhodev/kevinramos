@@ -1,16 +1,16 @@
 .header {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 15% 75% 10%;
 
   @media (max-width: 1024px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 20% 1fr 100px;
+    grid-template-rows: 5% 20% 65% 10%;
   }
 
   @media (max-width: 696px) {
     grid-template-columns: 1fr;
-    grid-template-rows: 50px 1fr 2fr 100px;
+    grid-template-rows: 5% 25% 50% 20%;
   }
 
   .navbar {
